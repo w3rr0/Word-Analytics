@@ -1,5 +1,12 @@
 export default function Textarea() {
+const changeHandler = (e) => {
+    console.log(e.target.value)
+}
+
     return (
-        <textarea className="textarea"/>
+        <textarea onChange={changeHandler}
+        className="textarea"
+        placeholder="Enter your text"
+        spellCheck="false"/>
         )
     }
