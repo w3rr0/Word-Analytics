@@ -5,14 +5,17 @@ export default function Textarea() {
 const [text, setText] = useState ("")
 const [message, setMessage] = useState("")
 
+// basic validation for the textarea
 const changeHandler = (e) => {
     let newText = e.target.value
     if (newText.includes("<script>")) {
         setMessage("No script tags allowed!");
         newText = newText.replace("<script>", "");
-    } else if (newText.includes("@")) {
+    } else if (/@/.test(newText)) {
         setMessage("No @ symbol allowed!");
         newText = newText.replace("@", "");
+    } else {
+        setMessage("");
     }
     setText(newText)
 }
