@@ -1,10 +1,12 @@
+import { FACEBOOK_MAX_CHARACTERS, INSTAGRAM_MAX_CHARACTERS } from "./constants"
+
 export default function Stats({ stats }) {
   return (
     <section className="stats">
       <Stat label="Words" number={stats.numberOfWords}/>
       <Stat label="Characters" number={stats.numberOfCharacters}/>
-      <Stat label="Instagram" number={280-stats.numberOfCharacters}/>
-      <Stat label="Facebook" number={2200-stats.numberOfCharacters}/>
+      <Stat label="Instagram" number={INSTAGRAM_MAX_CHARACTERS-stats.numberOfCharacters}/>
+      <Stat label="Facebook" number={FACEBOOK_MAX_CHARACTERS-stats.numberOfCharacters}/>
     </section>
   )
 }
